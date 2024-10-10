@@ -12,8 +12,8 @@ Este proyecto es una aplicación Node.js que configura AWS SDK para interactuar 
 1. Clona el repositorio:
 
     ```sh
-    git clone <https://github.com/juancarlossaucedo/file-with-cloudflare.git>
-    cd <file-cloudflare>
+    git clone https://github.com/juancarlossaucedo/file-with-cloudflare.git
+    cd file-with-cloudflare
     ```
 
 2. Instala las dependencias:
