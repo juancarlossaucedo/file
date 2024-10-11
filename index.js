@@ -1,13 +1,13 @@
 const express = require('express');
 const AWS = require('aws-sdk');
-const cors = require('cors'); // Asegúrate de tener esto importado
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
 
 // Configuración de CORS
 app.use(cors({
-  origin: 'http://localhost:4200', // Cambia según el origen de tu aplicación Angular
+  origin: 'http://localhost:4200',
   methods: ['GET', 'PUT'],
 }));
 
@@ -24,9 +24,11 @@ const s3 = new AWS.S3({
 app.get('/get-signed-url', (req, res) => {
   const { filename, contentType } = req.query;
 
+  const key = `certificados/${filename}`;
+
   const params = {
     Bucket: process.env.R2_BUCKET_NAME,
-    Key: filename,
+    Key: key,
     Expires: 60,
     ContentType: contentType
   };
